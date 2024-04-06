@@ -38,7 +38,17 @@ function handleSearch(evt) {
           iconColor:'white'
         });
       } else {
-        galleryList.innerHTML = createMarkup(data.hits);
+          galleryList.innerHTML = createMarkup(data.hits);
+          const lightboxOptions = {
+    captionDelay: 250,
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    
+
+};
+
+const lightbox = new SimpleLightbox('.gallery a', lightboxOptions);
+lightbox.refresh();
       }
     })
       .catch(error => {
@@ -60,14 +70,5 @@ function handleSearch(evt) {
     });
 }
 
-const lightboxOptions = {
-    captionDelay: 250,
-    captionsData: 'alt',
-    captionPosition: 'bottom',
-    
 
-};
-
-const lightbox = new SimpleLightbox('.gallery a', lightboxOptions);
-lightbox.refresh();
 

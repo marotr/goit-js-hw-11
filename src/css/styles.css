@@ -29,6 +29,7 @@
     var(--c), var(--r1), var(--r2);
   background-repeat: no-repeat;
   animation: l1 1s infinite alternate;
+  margin-bottom: 32px;
 }
 @keyframes l1 {
   0%,
