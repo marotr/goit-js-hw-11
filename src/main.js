@@ -24,6 +24,8 @@ function handleSearch(evt) {
   const imageValue = imageInput.value.trim();
 
   loader.style.display = 'block';
+  galleryList.innerHTML = '';
+
 
   serviceImage(imageValue)
     .then(data => { 
@@ -52,7 +54,7 @@ lightbox.refresh();
       }
     })
       .catch(error => {
-         
+        galleryList.innerHTML = '';
       iziToast.show({
         message: "An error occurred while fetching images. Please try again later.",
         messageColor: ' #fff',
